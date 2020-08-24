@@ -479,7 +479,15 @@ def main():
                         servStatusResponse = httpConn.getresponse()
                         readData = servStatusResponse.read()
                         jsonOBJStatus = json.loads(readData)
-
+                        
+                        # Section for retriving info from manifest.json
+                        '''
+                        Return service manifest, based on this url
+                        http://localhost:6080/arcgis/admin/services/servicename.MapServer/iteminfo/manifest/manifest.xml
+                        a shorter version of manifest can be obtained from a JSON manifest, available via REST API:
+                        http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000001vt000000
+                        '''
+                        
                         # Filter out Hosted and SampleWorldCities services
                         servCount+=1
                         print str(servCount)+': '+folder+jsonOBJ["serviceName"]+"\n"                        
