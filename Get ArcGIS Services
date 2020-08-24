@@ -2,6 +2,8 @@
 # ServiceName,Folder,Type,Status,FeatureService,SourcePath,Datasets,DocumentPath,ClientName,ServiceUrl,
 # Cache Directory,Jobs Directory,Output Directory,wms,kml,Max Records,Min Instances,Max Instances
 
+# You can configure you ArcGIS server username and password, server name to run script by selecting from list or input manually every time
+
 # For HTTP calls
 import httplib, urllib, json
 
@@ -24,14 +26,14 @@ def main():
     #Servers and settings
     # For first server
     if selectServ =='1':
-        username = 'psadmin'
+        username = 'user'
         password = getpass.getpass("Enter password: ")
         serverName = 'first.server.name'
         serverPort = '6080'
         print 'Proccessing '+serverName
     # For second server
     elif selectServ =='2':
-        username = 'psadmin'
+        username = 'user'
         password = getpass.getpass("Enter password: ")
         serverName = 'second.server.name'
         serverPort = '6080'
